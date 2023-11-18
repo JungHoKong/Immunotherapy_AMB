@@ -1,4 +1,3 @@
 data/
-env/
-toolbox/
 */.ipynb_checkpoints/
+src/*.swp

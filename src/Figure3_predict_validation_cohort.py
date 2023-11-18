@@ -13,17 +13,17 @@ import seaborn as sns
 from itertools import combinations
 warnings.simplefilter(action='ignore', category=FutureWarning)
 home_dir = os.path.expanduser('~')
-exec(open('%s/TMB_profile/toolbox/load_hierarchy.py'%home_dir).read())
-exec(open('%s/TMB_profile/toolbox/load_ICI.py'%home_dir).read())
-exec(open('%s/TMB_profile/toolbox/calculate_TMB_profiles.py'%home_dir).read())
-exec(open('%s/TMB_profile/toolbox/measure_performance.py'%home_dir).read())
+exec(open('%s/AMB_ICI_predictionAMB_ICI_prediction/toolbox/load_hierarchy.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/load_ICI.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/calculate_AMB_profiles.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/measure_performance.py'%home_dir).read())
 
 ## initalize
 hierarchy = 'NEST' 
 train_dataset = 'Samstein'
 test_dataset = 'Hellmann'
 survival_models = ['Cox', 'RandomSurvivalForest']
-test_types = ['TMB', 'TMB_profile', 'gene']
+test_types = ['TMB', 'AMB_profile', 'gene']
 cox_penalizer = np.arange(0.1, 1.1, 0.1)
 max_depths = [3,5,None]
 
@@ -34,15 +34,15 @@ data_df = load_datasets(datasets)
 
 
 ## Calculate TMB profiles
-TMB_profiles = {}
+AMB_profiles = {}
 for dataset in datasets:
-    tmp = Calculate_TMB_profiles(input_df=data_df[dataset], hierarchy=hierarchy).Simple_Sum()
-    TMB_profiles[dataset] = tmp.sort_values(by='name')
+    tmp = Calculate_AMB_profiles(input_df=data_df[dataset], hierarchy=hierarchy).Simple_Sum()
+    AMB_profiles[dataset] = tmp.sort_values(by='name')
     del tmp
 
 
 # input dataframe
-X_train = TMB_profiles[train_dataset]
+X_train = AMB_profiles[train_dataset]
 X_train_genes = data_df[train_dataset]
 
 # TMB
@@ -50,7 +50,7 @@ X_train_TMB = defaultdict(list)
 TMB_df = {}
 for dataset in datasets:
     TMB = load_ICI_TMB(dataset)
-    common_samples = sorted(list(set(TMB['patient'].tolist()) & set(TMB_profiles[dataset].columns)))
+    common_samples = sorted(list(set(TMB['patient'].tolist()) & set(AMB_profiles[dataset].columns)))
     TMB = TMB.loc[TMB['patient'].isin(common_samples),:].sort_values(by='patient')['TMB'].tolist()
     # TMB_df
     tmp = {common_samples[i]:TMB[i] for i in range(len(TMB))}
@@ -67,7 +67,7 @@ output = defaultdict(list)
 output2 = defaultdict(list)
 
 # test input dataframe
-X_test = TMB_profiles[test_dataset]
+X_test = AMB_profiles[test_dataset]
 X_test_genes = data_df[test_dataset]
 X_test_TMB = defaultdict(list)
 for key, value in TMB_df[test_dataset].items():
@@ -80,7 +80,7 @@ for test_type in test_types:
     train_input = defaultdict(list)
     test_input = defaultdict(list)
 
-    if 'TMB_profile' == test_type:
+    if 'AMB_profile' == test_type:
         X_train = X_train.sort_values(by='name'); X_test = X_test.sort_values(by='name')
         features = X_train['name'].tolist()
         for idx, feature in enumerate(features):
@@ -121,7 +121,7 @@ for test_type in test_types:
         train_X, test_X = train_input, test_input
 
         if survival_model == 'Cox':
-            if ('TMB_profile' == test_type) or ('gene' == test_type): continue
+            if ('AMB_profile' == test_type) or ('gene' == test_type): continue
             # nested CV
             best_CV_score, best_param, CV_scores = OS_select_param('COX', cox_penalizer, train_X, 'month', 'status')
             cph = CoxPHFitter(penalizer=best_param)

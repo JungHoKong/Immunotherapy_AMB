@@ -13,15 +13,15 @@ import seaborn as sns
 from itertools import combinations
 warnings.simplefilter(action='ignore', category=FutureWarning)
 home_dir = os.path.expanduser('~')
-exec(open('%s/TMB_profile/toolbox/load_hierarchy.py'%home_dir).read())
-exec(open('%s/TMB_profile/toolbox/load_ICI.py'%home_dir).read())
-exec(open('%s/TMB_profile/toolbox/calculate_TMB_profiles.py'%home_dir).read())
-exec(open('%s/TMB_profile/toolbox/measure_performance.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/load_hierarchy.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/load_ICI.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/calculate_AMB_profiles.py'%home_dir).read())
+exec(open('%s/AMB_ICI_prediction/toolbox/measure_performance.py'%home_dir).read())
 
 ## initalize
 hierarchy = 'NEST' 
 train_dataset = 'Samstein'
-test_types = ['TMB', 'TMB_profile', 'gene']
+test_types = ['TMB', 'AMB_profile', 'gene']
 cox_penalizer = np.arange(0.1, 1.1, 0.1)
 max_depths = [3,5,None]
 
@@ -31,14 +31,14 @@ data_df = load_datasets([train_dataset])
 
 
 ## Calculate TMB profiles
-TMB_profiles = {}
-tmp = Calculate_TMB_profiles(input_df=data_df[train_dataset], hierarchy=hierarchy).Simple_Sum()
-TMB_profiles[train_dataset] = tmp.sort_values(by='name')
+AMB_profiles = {}
+tmp = Calculate_AMB_profiles(input_df=data_df[train_dataset], hierarchy=hierarchy).Simple_Sum()
+AMB_profiles[train_dataset] = tmp.sort_values(by='name')
 del tmp
 
 
 # input dataframe
-X_train = TMB_profiles[train_dataset]
+X_train = AMB_profiles[train_dataset]
 X_train_genes = data_df[train_dataset]
 
 

@@ -5,7 +5,7 @@ home_dir = os.path.expanduser('~')
 exec(open('../toolbox/load_ICI.py').read())
 
 # run MAGeCK
-output_dir = '~/TMB_profile/data/in_vivo_mice_CRISPR_screening'
+output_dir = '~/AMB_ICI_prediction/data/in_vivo_mice_CRISPR_screening'
 
 
 # result 
