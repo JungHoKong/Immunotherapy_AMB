@@ -2,3 +2,5 @@ data/
 */.ipynb_checkpoints/
 src/*.swp
 .ipynb_checkpoints
+src/.predict_validation_cohort.py.swp
+src/.run_LOOCV.py.swp
