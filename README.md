@@ -23,6 +23,8 @@ A full list of libraries used can be found in "py3.yml", "plotly_env.yml" and "m
 
 `Figure6_run_MAGeCK.py` Run MAGeCK.
 
+`mutation_distribution` Distribution of mutation burdens and AMB levels in Samstein and Hellmann cohorts.
+
 
 # toolbox
 `calculate_AMB_profiles.py` Calculate AMB levels for each sample.
