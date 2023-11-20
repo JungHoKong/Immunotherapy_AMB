@@ -32,3 +32,7 @@ A full list of libraries used can be found in "py3.yml", "plotly_env.yml" and "m
 `load_hierarchy.py` Load data on protein assemblies.
 
 `load_ICI.py` Load immunotherapy dataset.
+
+# data
+`NEST-Samstein.txt` AMB levles for Samstein cohort
+`NEST-Hellmann_etal.txt` AMB levels for Hellmann cohort
