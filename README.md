@@ -5,7 +5,7 @@ AMB is a visible machine learning framework that predicts patient's response to 
 "Prediction of immunotherapy response using mutations to cancer protein assemblies", Kong et al.
 
 # Requirements
-This work was mainly performed using python 3.9.13. Key libraries that were used in this study is listed below:
+This work was mainly performed using `python 3.9.13` and `Anaconda`. Key libraries that were used in this study is listed below:
 
 - scikit-learn
 - scikit-survival
@@ -14,7 +14,10 @@ This work was mainly performed using python 3.9.13. Key libraries that were used
 - plotly
 - mageck
 
+Libraries above can be install using `pip install` or `conda install`.
+
 A full list of libraries used can be found in "py3.yml", "plotly_env.yml" and "mageckenv.yml".
+
 
 # src
 `Figure3_run_LOOCV.py` Perform Leave-One-Out Cross-Validation in Samstein cohort.
