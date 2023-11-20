@@ -1,7 +1,7 @@
 # AMB
 AMB is a visible machine learning framework that predicts patient's response to immune checkpoint inhibitors. This framework computes mutational burden at different levels of cancer protein assemblies and extract biomarkers of immunotherapy response.
 
-# Publication
+# 
 "Prediction of immunotherapy response using mutations to cancer protein assemblies", Kong et al.
 
 # Requirements
