@@ -14,13 +14,13 @@ This work was mainly performed using `python 3.9.13` and `Anaconda`. Key librari
 - plotly
 - mageck
 
-Libraries above can be install using `pip install` or `conda install`.
+Libraries above can be install using `pip install` or `conda install`. Installation of the libraries would take less than 5 minutes.
 
 A full list of libraries used can be found in "py3.yml", "plotly_env.yml" and "mageckenv.yml".
 
 
 # src
-`Figure3_run_LOOCV.py` Perform Leave-One-Out Cross-Validation in Samstein cohort.
+`Figure3_run_LOOCV.py` Perform Leave-One-Out Cross-Validation (LOOCV) in Samstein cohort. Training AMB model would take approx. 1 hour.
 
 `Figure3_predict_validation_cohort.py` Make predictions in validation cohort.
 
@@ -30,7 +30,7 @@ A full list of libraries used can be found in "py3.yml", "plotly_env.yml" and "m
 
 
 # toolbox
-`calculate_AMB_profiles.py` Calculate AMB levels for each sample.
+`calculate_AMB_profiles.py` Calculate AMB levels for each sample. Expected output for AMB levels are included in the `data` folder. Calculating AMB levels would take approx. 5 minutes.
 
 `load_hierarchy.py` Load data on protein assemblies.
 
