@@ -5,7 +5,7 @@ AMB is a visible machine learning framework that predicts patient's response to 
 "Prediction of immunotherapy response using mutations to cancer protein assemblies", Kong et al.
 
 # Requirements
-This work was mainly performed using `python 3.9.13` and `Anaconda`. Key libraries that were used in this study is listed below:
+This work was mainly performed using `python 3.9.13` and `Anaconda`. Key libraries that were used in this study are listed below:
 
 - scikit-learn
 - scikit-survival
