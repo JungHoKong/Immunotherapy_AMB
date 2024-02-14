@@ -12,19 +12,17 @@ This work was mainly performed using `python 3.9.13` and `Anaconda`. Key librari
 - networkx
 - lifelines
 - plotly
-- mageck
+
 
 Libraries above can be install using `pip install` or `conda install`. Installation of the libraries would take less than 5 minutes.
 
-A full list of libraries used can be found in "py3.yml", "plotly_env.yml" and "mageckenv.yml".
+A full list of libraries used can be found in "py3.yml" and "plotly_env.yml".
 
 
 # src
 `Figure3_run_LOOCV.py` Perform Leave-One-Out Cross-Validation (LOOCV) in Samstein cohort. Training AMB model would take approx. 1 hour.
 
 `Figure3_predict_validation_cohort.py` Make predictions in validation cohort.
-
-`Figure6_run_MAGeCK.py` Run MAGeCK.
 
 `mutation_distribution` Distribution of mutation burdens and AMB levels in Samstein and Hellmann cohorts.
 
