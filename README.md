@@ -19,7 +19,7 @@ A full list of libraries used can be found in "py3.yml" in the 'env' folder.
 
 Setting up the virtual environment can be done by running the following command line:
 
-'conda env create -f env/py3.yml'
+`conda env create -f env/py3.yml`
 
 
 
@@ -34,9 +34,9 @@ Setting up the virtual environment can be done by running the following command 
 1. *Binarized mutation dataframe (input_df)* : A pandas DataFrame where the 1st column is gene IDs and the 2nd column and onwards are sample IDs.
 2. *Assembly information (assembly_df)*: String ('NeST') or a pandas DataFrame. As a default, it will use NeST hierarchy. Custom pathway can be used to train an AMB model. When using custom dataframe, please see below:
 
-'Dataframe containing assembly name and the genes within in the assembly. 
+`Dataframe containing assembly name and the genes within in the assembly. 
 Use 'name' and 'gene_id' for columns indicating assembly name and genes, respectively.
-In 'gene_id' columns, include genes within an assembly, separated by a space between gene names (e.g. "TP53 FGFR EGFR").'
+In 'gene_id' columns, include genes within an assembly, separated by a space between gene names (e.g. "TP53 FGFR EGFR").`
 
 3. *Maximum depth of each tree in the random survival forest model (max_depth)* : Integer value or *None* to use maximum depth (default=3). 
 
