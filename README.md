@@ -35,7 +35,7 @@ Setting up the virtual environment can be done by running the following command 
 
 # Required inputs to train the AMB model (*train.py*)
 Parameter names used in the *train.py* code are inside the parenthesis
-1. *Binarized mutation dataframe (input_df)* : A pandas DataFrame where the 1st column is gene IDs and the 2nd column and onwards are sample IDs.
+1. *Binarized mutation dataframe (input_df)* : A pandas DataFrame where the 1st column is gene IDs. The 2nd column and onwards should be sample IDs.
 2. *Survival data (survival_df)* : A pandas DataFrame that includes patient's overall or progression-free survival. The columns of the dataframe should include **sample**, **month** and **status**.  
 3. *Assembly information (assembly_df)*: String ('NeST') or a pandas DataFrame. As a default, it will use NeST hierarchy. Custom pathway can be used to train an AMB model. When using custom dataframe, use 'name' and 'gene_id' for columns indicating assembly name and genes, respectively.
 In 'gene_id' columns, include genes within an assembly, separate gene names by spaces (e.g. "TP53 FGFR EGFR").
@@ -45,3 +45,4 @@ In 'gene_id' columns, include genes within an assembly, separate gene names by s
 **train_AMB** will return the following:
 1. A trained random survival forest model
 2. AMB scores (pandas dataframe) used to train the model.
+
