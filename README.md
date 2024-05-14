@@ -39,7 +39,7 @@ Parameter names used to train the model are inside the parenthesis
 2. *Assembly information (assembly_df)*: String ('NeST') or a pandas DataFrame. As a default, it will use NeST hierarchy. Custom pathway can be used to train an AMB model. When using custom dataframe, use 'name' and 'gene_id' for columns indicating assembly name and genes, respectively.
 In 'gene_id' columns, include genes within an assembly, separate gene names by spaces (e.g. "TP53 FGFR EGFR").
 
-3. *Maximum depth of each tree in the random survival forest model (max_depth)* : Integer value or *None* to use maximum depth (default=3). 
+3. *Maximum depth of each tree in the random survival forest model (max_depth)* : Integer value (default=3) or *None* to use maximum depth. 
 
 
 **train_AMB** will return the following:
