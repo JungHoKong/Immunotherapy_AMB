@@ -15,8 +15,11 @@ This work was mainly performed using `python 3.9.13` and `Anaconda`. Key librari
 
 Libraries above can be install using `pip install` or `conda install`. Installation of the libraries would take less than 5 minutes.
 
+
 A full list of libraries used can be found in "py3.yml" in the 'env' folder.
 
+
+## Setting up the virtual environment
 Setting up the virtual environment can be done by running the following command line:
 
 `conda env create -f env/py3.yml`
@@ -30,7 +33,8 @@ Setting up the virtual environment can be done by running the following command 
 
 
 
-# Required inputs to train the AMB model (parameter names used to train the model are inside the parenthesis)
+# Required inputs to train the AMB model
+## (parameter names used to train the model are inside the parenthesis)
 1. *Binarized mutation dataframe (input_df)* : A pandas DataFrame where the 1st column is gene IDs and the 2nd column and onwards are sample IDs.
 2. *Assembly information (assembly_df)*: String ('NeST') or a pandas DataFrame. As a default, it will use NeST hierarchy. Custom pathway can be used to train an AMB model. When using custom dataframe, use 'name' and 'gene_id' for columns indicating assembly name and genes, respectively.
 In 'gene_id' columns, include genes within an assembly, separate gene names by spaces (e.g. "TP53 FGFR EGFR").
@@ -38,4 +42,6 @@ In 'gene_id' columns, include genes within an assembly, separate gene names by s
 3. *Maximum depth of each tree in the random survival forest model (max_depth)* : Integer value or *None* to use maximum depth (default=3). 
 
 
-**train_AMB** will return (1) *a trained random survival forest model* and (2) *AMB scores (pandas dataframe) used to train the model*.
+**train_AMB** will return the following:
+1. A trained random survival forest model
+2. AMB scores (pandas dataframe) used to train the model.
