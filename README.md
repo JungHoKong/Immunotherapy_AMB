@@ -19,11 +19,14 @@ Libraries above can be install using `pip install` or `conda install`. Installat
 A full list of libraries used can be found in "py3.yml" in the 'env' folder.
 
 
-## Setting up the virtual environment
+## Setting up the virtual environment (**env** folder)
 Setting up the virtual environment can be done by running the following command line:
 
 `conda env create -f env/py3.yml`
 
+
+## Data folder
+1. *NeST_node.csv* : Assembly name and its associated genes in the assembly (PMID: 34591613).
 
 
 # Code description (within **src** folder)
