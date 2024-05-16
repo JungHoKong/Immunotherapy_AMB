@@ -25,7 +25,7 @@ Setting up the virtual environment can be done by running the following command 
 `conda env create -f env/py3.yml`
 
 
-## Data folder
+# Data folder
 1. *NeST_node.csv* : Assembly name and its associated genes in the assembly (PMID: 34591613).
 
 
