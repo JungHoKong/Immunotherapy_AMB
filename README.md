@@ -38,8 +38,8 @@ Parameter names used in the *train.py* code are inside the parenthesis
 1. *Binarized mutation dataframe (input_df)* : A pandas DataFrame where the 1st column is gene IDs. The 2nd column and onwards should be sample IDs.
 2. *Survival data (survival_df)* : A pandas DataFrame that includes patient's overall or progression-free survival. The columns of the dataframe should include **sample**, **month** and **status**.  
 3. *Assembly information (assembly_df)*: String ('NeST') or a pandas DataFrame. As a default, it will use NeST hierarchy. Custom pathway can be used to train an AMB model. When using custom dataframe, use 'name' and 'gene_id' for columns indicating assembly name and genes, respectively.
-In 'gene_id' columns, include genes within an assembly, separate gene names by spaces (e.g. "TP53 FGFR EGFR").
-4. *Maximum depth of each tree in the random survival forest model (max_depth)* : Integer value (default=3) or *None* to use maximum depth. 
+In 'gene_id' columns, include genes within an assembly and separate gene names by spaces (e.g. "TP53 FGFR EGFR").
+4. *Maximum depth of each tree in the random survival forest model (max_depth)* : Integer value (default=3) or *None* (maximum depth). 
 
 
 **train_AMB** will return the following:
